@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import { Box, Flex, Text, Spacer, VStack, Button, Icon, Image, Link } from "@chakra-ui/react";
-import NextLink from "next/Link";
+import NextLink from "next/link";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
