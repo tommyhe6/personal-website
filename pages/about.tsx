@@ -1,5 +1,5 @@
 import NavBar from "../components/NavBar";
-import { Text, VStack, HStack } from "@chakra-ui/react";
+import { Text, VStack, HStack, Link } from "@chakra-ui/react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { useState } from "react";
 import type { NextPage } from "next";
@@ -10,15 +10,18 @@ const about: NextPage = () => {
     const [pageNumber, setPageNumber] = useState(1);
 
     return (
-        <HStack>
+        <VStack>
             <Text>
-                I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science Minor at McGill University. I am currently most interested in theoretical computer science, specifically cryptography and algorithms as well as areas of theoretical math, mostly discrete math and subfields of algebra including algebraic geometry/arithmetic geometry. I aim to take my strong math background to help me aid in studying computer science.
-                My CV:
+                I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science Minor at McGill University. I am currently most interested in theoretical computer science, specifically cryptography and machine learning as well as areas of theoretical math, mostly discrete math and subfields of algebra such as algebraic number theory. I aim to take my strong math background to help me aid in studying computer science. My resume is available {" "}
+                <Link href="Tommy_He_Resume.pdf" color="blue.400" isExternal>
+                here
+                </Link>
+                {" "} as well as below.
             </Text>
-            <Document file="Tommy_He_Resume.pdf">
+            <Document file="Tommy_He_Resume.pdf" loading="Loading CV">
                 <Page pageNumber={pageNumber}/>
             </Document>
-        </HStack>
+        </VStack>
     );
 };
 

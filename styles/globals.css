@@ -15,8 +15,3 @@ a {
     box-sizing: border-box;
 }
 
-[data-theme='dark'],
-[data-theme='dark'] body {
-  color: #fff;
-  background: #111;
-}

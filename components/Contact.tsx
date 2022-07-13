@@ -9,9 +9,9 @@ const Contact: NextFunctionComponent = () => {
         <VStack>
             <Text>Contact -- Florida</Text>
             <HStack as="nav">
-                <NavItemIcon size="2em" icon={FaGithub} url="https://www.linkedin.com/in/tommyhe6/" />
-                <NavItemIcon size="2em" icon={FaLinkedin} url="https://github.com/THe142857" />
-                <NavItemIcon size="2em" icon={MdEmail} url="https://github.com/THe142857" />
+                <NavItemIcon size="2em" icon={FaGithub} url="https://github.com/THe142857" />
+                <NavItemIcon size="2em" icon={FaLinkedin} url="https://www.linkedin.com/in/tommyhe6/" />
+                <NavItemIcon size="2em" icon={MdEmail} url="" />
             </HStack>
         </VStack>
     );

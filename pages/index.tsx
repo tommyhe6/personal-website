@@ -8,7 +8,7 @@ const Home: NextPage = () => {
         <Flex height="100vh" direction="column" alignItems="center" justifyContent="space-evenly" p={3}>
             <Spacer />
             <VStack>
-                <Image src="/PIC.jpg" boxSize="150px" borderRadius="full" />
+                {/* <Image src="/PIC.jpg" boxSize="150px" borderRadius="full" /> */}
                 <Text>
                     TOMMY HE
                 </Text>
