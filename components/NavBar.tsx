@@ -8,9 +8,7 @@ const NavBar = () => {
 
     return (
         <Flex direction="row" alignSelf="stretch" justifyContent="space-between">
-            <NextLink href="/" passHref>
-                <NavItemLink navName="TOMMY" variant="link" />
-            </NextLink>
+            <NavItemLink navName="TOMMY" variant="link" url="/"/>
             <HStack as="nav">
                 <NavItemLink navName="About" />
                 <NavItemLink navName="Posts" />
