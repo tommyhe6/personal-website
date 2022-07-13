@@ -2,8 +2,9 @@ import React from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import { getAllPosts, getPost } from "../../postsUtils";
 
-const Post = ({ code, frontmatter }) => {
-    console.log(code);
+const Post = ({ code, frontmatter }: any) => {
+    // console.log(code, frontmatter);
+    // console.log(code);
     // const Component = React.useMemo(() => getMDXComponent(code), [code]);
     const Component = getMDXComponent(code);
     return (
@@ -14,7 +15,7 @@ const Post = ({ code, frontmatter }) => {
     );
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
     const post = await getPost(params.slug);
     return {
         props: { ...post },
@@ -22,7 +23,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-    const paths = getAllPosts().map(({ slug }) => ({ params: { slug } }));
+    const paths = getAllPosts().map(({ slug }: any) => ({ params: { slug } }));
     return {
         paths,
         fallback: false,

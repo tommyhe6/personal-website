@@ -1,18 +1,18 @@
-import NextLink from "next/Link";
-import { Link, Icon } from "@chakra-ui/react";
-import type { NextFunctionComponent } from "next";
+import NextLink from "next/link";
+import { Link, Icon, IconButton } from "@chakra-ui/react";
+// import React from "react";
 
 type Props = {
-    size: string;
-    icon: string;
+    label: string;
+    icon: JSX.Element;
     url: string;
 };
 
-const NavItemIcon: NextFunctionComponent<Props> = ({ size, icon, url }) => {
+const NavItemIcon = ({ label, icon, url }: Props) => {
     return (
         <NextLink href={url} passHref>
             <Link>
-                <Icon boxSize={size} as={icon} />
+                <IconButton aria-label={label} size="lg" fontSize="30px" variant="ghost" icon={icon}/>
             </Link>
         </NextLink>
     );

@@ -9,7 +9,7 @@ import rehypeMathjax from "rehype-mathjax";
 
 export const postsDir = path.join(process.cwd(), "public/posts");
 
-export const getSource = (fileName) => {
+export const getSource = (fileName: string) => {
     return fs.readFileSync(path.join(postsDir, fileName));
 };
 
@@ -28,12 +28,12 @@ export const getAllPosts = () => {
     });
 };
 
-export const getPost = async (slug) => {
+export const getPost = async (slug: string) => {
     const source = getSource(slug + ".mdx");
 
     const { code, frontmatter } = await bundleMDX({
         source: String(source),
-        xdmOptions(options) {
+        mdxOptions(options) {
             options.remarkPlugins = [...(options?.remarkPlugins ?? []), [remarkMath]];
             options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeMathjax, {
                 tex: {

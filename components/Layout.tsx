@@ -1,13 +1,13 @@
 import NavBar from "./NavBar";
 import Contact from "./Contact";
 import { VStack, Spacer } from "@chakra-ui/react";
-import type { NextFunctionComponent } from "next"; 
+// import React from "react"
 
 type Props = {
-    children: NextFunctionComponent;
-};
+    children: JSX.Element;
+}
 
-const Layout: NextFunctionComponent<Props> = ({ children }) => {
+const Layout = ({ children }: Props) => {
     return (
         <VStack height = "100vh" direction="column" alignItems="center" p={3}>
             <NavBar />

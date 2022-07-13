@@ -1,15 +1,13 @@
-import NextLink from "next/Link";
+import NextLink from "next/link";
 import { Button } from "@chakra-ui/react";
-import type { NextFunctionComponent } from "next";
 
 type Props = {
     navName: string;
     variant?: string;
-    href?: string;
 };
 
-const NavItem: NextFunctionComponent<Props> = ({ navName, variant="solid", href }) => {
-    href = href ? href : `/${navName.toLowerCase()}`;
+const NavItemLink = ({ navName, variant="solid" }: Props) => {
+    const href: string = `/${navName.toLowerCase()}`;
     return (
         <NextLink href={href} passHref>
             <Button variant={variant} color="#007fff">{navName}</Button>
@@ -17,4 +15,4 @@ const NavItem: NextFunctionComponent<Props> = ({ navName, variant="solid", href 
     );
 };
 
-export default NavItem;
+export default NavItemLink;

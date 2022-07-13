@@ -9,6 +9,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         width: "100px",
         margin: "0 auto",
     };
+
     return (
         <ThemeProvider>
             <ChakraProvider>

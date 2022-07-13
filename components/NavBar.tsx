@@ -1,10 +1,9 @@
 import NavItemLink from "../components/NavItemLink";
 import { Flex, HStack, Link, Text, IconButton, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons"
-import type { NextFunctionComponent } from "next";
-import NextLink from "next/Link";
+import NextLink from "next/link";
 
-const NavBar: NextFunctionComponent = () => {
+const NavBar = () => {
     const { colorMode, toggleColorMode } = useColorMode()
 
     return (
@@ -17,7 +16,7 @@ const NavBar: NextFunctionComponent = () => {
                 <NavItemLink navName="Posts" />
                 <NavItemLink navName="Projects" />
                 <NavItemLink navName="Papers" />
-                <IconButton onClick={toggleColorMode}>
+                <IconButton aria-label="color mode" onClick={toggleColorMode}>
                     { colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }
                 </IconButton>
             </HStack>
