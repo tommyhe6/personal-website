@@ -1,6 +1,5 @@
 import NextLink from "next/link";
 import { Link, Icon, IconButton } from "@chakra-ui/react";
-// import React from "react";
 
 type Props = {
     label: string;

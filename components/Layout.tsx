@@ -1,7 +1,6 @@
 import NavBar from "./NavBar";
 import Contact from "./Contact";
 import { VStack, Spacer } from "@chakra-ui/react";
-// import React from "react"
 
 type Props = {
     children: JSX.Element;
@@ -9,7 +8,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
     return (
-        <VStack height = "100vh" direction="column" alignItems="center" p={3}>
+        <VStack height = "100vh" width="60vw" margin="auto" direction="column" alignItems="center" p={3}>
             <NavBar />
             {children}
             <Spacer />

@@ -6,14 +6,11 @@ import { MdEmail } from "react-icons/md";
 const Contact = () => {
     return (
         <VStack>
-            <Text>Contact -- Florida</Text>
+            <Text>Montr&#233;al, Qu&#233;bec</Text>
             <HStack as="nav">
-                {/* <IconButton aria-label="github" size="lg" fontSize="40px" icon={<FaGithub />} variant="ghost"/> */}
-                {/* <IconButton aria-label="linkedin" size="lg" fontSize="40px" icon={<FaLinkedin />} variant="ghost"/> */}
-                {/* <IconButton aria-label="email" size="lg" fontSize="40px" icon={<MdEmail />} variant="ghost"/> */}
                 <NavItemIcon label="github" icon={<FaGithub />} url="https://github.com/THe142857" />
                 <NavItemIcon label="linkedin" icon={<FaLinkedin />} url="https://www.linkedin.com/in/tommyhe6/" />
-                <NavItemIcon label="email" icon={<MdEmail />} url="" />
+                <NavItemIcon label="email" icon={<MdEmail />} url="mailto:tommy@tommyhe.com" />
             </HStack>
         </VStack>
     );

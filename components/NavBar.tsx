@@ -8,13 +8,17 @@ const NavBar = () => {
 
     return (
         <Flex direction="row" alignSelf="stretch" justifyContent="space-between">
-            <NavItemLink navName="TOMMY" variant="link" url="/"/>
+            <NavItemLink navName="TOMMY" url="/" size="lg"/>
             <HStack as="nav">
-                <NavItemLink navName="About" />
-                <NavItemLink navName="Posts" />
-                <NavItemLink navName="Projects" />
-                <NavItemLink navName="Papers" />
-                <IconButton aria-label="color mode" onClick={toggleColorMode}>
+                <NavItemLink navName="Projects"/>
+                <Text>|</Text>
+                <NavItemLink navName="Papers"/>
+                <Text>|</Text>
+                <NavItemLink navName="Blog"/>
+                <Text>|</Text>
+                <NavItemLink navName="Contact"/>
+                <Text>|</Text>
+                <IconButton aria-label="color mode" variant="link" onClick={toggleColorMode}>
                     { colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }
                 </IconButton>
             </HStack>

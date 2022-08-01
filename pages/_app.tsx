@@ -1,20 +1,26 @@
 import '../styles/globals.css';
 import Layout from "../components/Layout";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { ThemeProvider } from "next-themes"
 import type { AppProps } from 'next/app';
+import "@fontsource/merriweather";
+
+const theme = extendTheme({
+    fonts: {
+        heading: "merriweather",
+        body: "merriweather",
+    },
+    colors: {
+        redbrown: "#c41e07",
+    }
+});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-    const mainStyle = {
-        width: "100px",
-        margin: "0 auto",
-    };
-
     return (
         <ThemeProvider>
-            <ChakraProvider>
+            <ChakraProvider theme={theme}>
                 <Layout>
-                    <Component style={mainStyle} {...pageProps} />
+                    <Component {...pageProps} />
                 </Layout>
             </ChakraProvider>
         </ThemeProvider>

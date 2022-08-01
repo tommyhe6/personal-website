@@ -1,17 +1,23 @@
 import NextLink from "next/link";
-import { Button } from "@chakra-ui/react";
+import { Button, Link } from "@chakra-ui/react";
 
 type Props = {
     navName: string;
     variant?: string;
     url?: string;
+    size?: string;
+    isExternal?: boolean;
 };
 
-const NavItem = ({ navName, variant="solid", url="" }: Props) => {
+const NavItem = ({ navName, variant="link", url="", size="sm", isExternal=false }: Props) => {
     url = url == "" ? `${url}/${navName.toLowerCase()}` : url;
     return (
         <NextLink href={url} passHref>
-            <Button variant={variant} color="#007fff">{navName}</Button>
+            <Link color="redbrown" isExternal={isExternal}>
+                <Button variant={variant} color="redbrown" size={size}>
+                    {navName}
+                </Button>
+            </Link>
         </NextLink>
     );
 };

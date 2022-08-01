@@ -1,22 +1,41 @@
 import NavBar from "../components/NavBar";
-import { Box, Flex, Text, Spacer, VStack, Button, Icon, Image, Link } from "@chakra-ui/react";
+import NavItemLink from "../components/NavItemLink";
+import { Text, Box, Flex, Heading, Spacer, VStack, Button, Icon, Image, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
+import Typewriter from "typewriter-effect";
 import type { NextPage } from "next";
+import styles from "./index.module.css";
+
 
 const Home: NextPage = () => {
     return (
         <Flex height="100vh" direction="column" alignItems="center" justifyContent="space-evenly" p={3}>
             <Spacer />
-            <VStack>
-                {/* <Image src="/PIC.jpg" boxSize="150px" borderRadius="full" /> */}
-                <Text>
+            <Flex h="50vh" flexDirection="column" alignItems="center">
+                <Heading h="100px" as="h1" size="4xl">
                     TOMMY HE
-                </Text>
+                </Heading>
+                <div className={styles.typewriter}>
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter
+                                .changeDelay(70)
+                                .typeString("Curious learner passionate about")
+                                .typeString("<br>mathematics and computer science")
+                                .start();
+                        }}
+                        />
+                </div>
+                <Spacer />
                 <Text>
-                    U2 Math & CS Student at McGill
+                    Hey, I&#39;m Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science minor at McGill University. I&#39;m most interested in new technologies with potential for high impact; I&#39;m currently looking into areas of cryptography and machine learning. I also enjoy learning about math, mostly discete math and algebra. I aim to take my strong math background to help gain a deeeper understanding and explore novelties in computer science. Outside of academics, I like playing tennis, ping pong, poker, and trying new things.
                 </Text>
-            </VStack>
+            </Flex>
+            <Flex h="15vh" flexDirection="column" alignItems="center">
             <Spacer />
+            <NavItemLink navName="Resume" variant="outline" url="Tommy_He_Resume.pdf" size="md" isExternal={true}/>
+            <Spacer />
+            </Flex>
         </Flex>
     );
 };
