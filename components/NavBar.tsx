@@ -1,5 +1,5 @@
 import NavItemLink from "../components/NavItemLink";
-import { Flex, HStack, Link, Text, IconButton, useColorMode } from "@chakra-ui/react";
+import { Spacer, Flex, HStack, Link, Text, IconButton, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons"
 import NextLink from "next/link";
 

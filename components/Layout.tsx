@@ -8,7 +8,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
     return (
-        <VStack height = "100vh" width="60vw" margin="auto" direction="column" alignItems="center" p={3}>
+        <VStack height = "97vh" width="60vw" margin="auto" direction="column" alignItems="center" p={3}>
             <NavBar />
             {children}
             <Spacer />

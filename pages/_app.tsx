@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import "../styles/global.css";
 import Layout from "../components/Layout";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { ThemeProvider } from "next-themes"

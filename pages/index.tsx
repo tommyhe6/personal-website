@@ -9,7 +9,7 @@ import styles from "./index.module.css";
 
 const Home: NextPage = () => {
     return (
-        <Flex height="100vh" direction="column" alignItems="center" justifyContent="space-evenly" p={3}>
+        <Flex height="97vh" direction="column" alignItems="center" justifyContent="space-evenly" p={3}>
             <Spacer />
             <Flex h="50vh" flexDirection="column" alignItems="center">
                 <Heading h="100px" as="h1" size="4xl">
