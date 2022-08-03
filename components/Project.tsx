@@ -5,12 +5,12 @@ type Props = {
     context: string;
     desc: string;
     time: string;
-    img: string;
+    img?: string;
     techIcons?: JSX.Element[];
     demos?: JSX.Element[];
 };
 
-const Project = ({ title, context, desc, time, img, techIcons=[], demos=[] }: Props) => {
+const Project = ({ title, context, desc, time, img="", techIcons=[], demos=[] }: Props) => {
     return (
         <VStack w="30vw" h="70vh" p={5} spacing="2vh" align="center">
             <VStack spacing="0.5vh">

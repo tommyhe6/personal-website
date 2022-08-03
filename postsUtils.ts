@@ -7,7 +7,7 @@ import rehypeKatex from "rehype-katex";
 import rehypeMathjax from "rehype-mathjax";
 // import rehypePrism from "rehype-prism";
 
-export const postsDir = path.join(process.cwd(), "public/posts");
+export const postsDir = path.join(process.cwd(), "public/blog");
 
 export const getSource = (fileName: string) => {
     return fs.readFileSync(path.join(postsDir, fileName));

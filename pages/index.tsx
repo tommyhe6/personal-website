@@ -15,17 +15,17 @@ const Home: NextPage = () => {
                 <Heading h="100px" as="h1" size="4xl">
                     TOMMY HE
                 </Heading>
-                <div className={styles.typewriter}>
+                <Box className={styles.typewriter}>
                     <Typewriter
                         onInit={(typewriter) => {
                             typewriter
-                                .changeDelay(70)
+                                .changeDelay(80)
                                 .typeString("Curious learner passionate about")
                                 .typeString("<br>mathematics and computer science")
                                 .start();
                         }}
                         />
-                </div>
+                </Box>
                 <Spacer />
                 <Text>
                     Hey, I&#39;m Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science minor at McGill University. I&#39;m most interested in new technologies with potential for high impact; I&#39;m currently looking into areas of cryptography and machine learning. I also enjoy learning about math, mostly discete math and algebra. I aim to take my strong math background to help gain a deeeper understanding and explore novelties in computer science. Outside of academics, I like playing tennis, ping pong, poker, and trying new things. If you ever want to discuss anything, feel free to reach out at {" "}

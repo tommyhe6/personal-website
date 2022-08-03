@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Project from "../components/Project";
-import NavItemIcon from "../components/NavItemIcon.tsx";
+import NavItemIcon from "../components/NavItemIcon";
 import { Heading, VStack, HStack, Flex, Divider } from "@chakra-ui/react";
 import { SiNextdotjs, SiFlask, SiExpress, SiTensorflow, SiDevpost, SiGithub  } from "react-icons/si";
 import { BsBoxArrowUpRight } from "react-icons/bs";
