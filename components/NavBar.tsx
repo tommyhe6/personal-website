@@ -12,11 +12,9 @@ const NavBar = () => {
             <HStack as="nav">
                 <NavItemLink navName="Projects"/>
                 <Text>|</Text>
-                <NavItemLink navName="Papers"/>
+                <NavItemLink navName="Writeups"/>
                 <Text>|</Text>
                 <NavItemLink navName="Blog"/>
-                <Text>|</Text>
-                <NavItemLink navName="Contact"/>
                 <Text>|</Text>
                 <IconButton aria-label="color mode" variant="link" onClick={toggleColorMode}>
                     { colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }

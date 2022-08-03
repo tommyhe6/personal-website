@@ -9,7 +9,7 @@ type Props = {
     isExternal?: boolean;
 };
 
-const NavItem = ({ navName, variant="link", url="", size="sm", isExternal=false }: Props) => {
+const NavItemLink = ({ navName, variant="link", url="", size="sm", isExternal=false }: Props) => {
     url = url == "" ? `${url}/${navName.toLowerCase()}` : url;
     return (
         <NextLink href={url} passHref>
@@ -22,4 +22,4 @@ const NavItem = ({ navName, variant="link", url="", size="sm", isExternal=false 
     );
 };
 
-export default NavItem;
+export default NavItemLink;

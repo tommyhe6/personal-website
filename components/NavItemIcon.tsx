@@ -10,7 +10,7 @@ type Props = {
 const NavItemIcon = ({ label, icon, url }: Props) => {
     return (
         <NextLink href={url} passHref>
-            <Link>
+            <Link isExternal>
                 <IconButton aria-label={label} size="lg" fontSize="30px" variant="ghost" icon={icon}/>
             </Link>
         </NextLink>
