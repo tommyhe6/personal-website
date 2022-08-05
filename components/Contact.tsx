@@ -3,7 +3,7 @@ import { Text, HStack, VStack, IconButton, Link } from "@chakra-ui/react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
 
-const Contact = () => {
+const Contact: () => JSX.Element = () => {
     return (
         <VStack>
             <Text>Montr&#233;al, Qu&#233;bec</Text>

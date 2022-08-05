@@ -7,19 +7,33 @@ import rehypeKatex from "rehype-katex";
 import rehypeMathjax from "rehype-mathjax";
 // import rehypePrism from "rehype-prism";
 
-export const postsDir = path.join(process.cwd(), "public/blog");
+type Frontmatter = {
+    [key: string]: string,
+};
 
-export const getSource = (fileName: string) => {
+export type MdxMeta = {
+    frontmatter: Frontmatter,
+    slug: string,
+};
+
+export type MdxBody = {
+    frontmatter: Frontmatter,
+    code: string,
+};
+
+export const postsDir: string = path.join(process.cwd(), "public/blog");
+
+export const getSource = (fileName: string): Buffer => {
     return fs.readFileSync(path.join(postsDir, fileName));
 };
 
-export const getAllPosts = () => {
+export const getAllPosts = (): MdxMeta[] => {
     return fs
     .readdirSync(postsDir)
     .map((file) => {
-        const source = getSource(file);
-        const slug = file.replace(/\.mdx?$/, "");
-        const { data } = matter(source);
+        const source: Buffer = getSource(file);
+        const slug: string = file.replace(/\.mdx?$/, "");
+        const { data }: { data: Frontmatter } = matter(source);
 
         return {
             frontmatter: data,
@@ -28,10 +42,10 @@ export const getAllPosts = () => {
     });
 };
 
-export const getPost = async (slug: string) => {
+export const getPost = async (slug: string): Promise<MdxBody> => {
     const source = getSource(slug + ".mdx");
 
-    const { code, frontmatter } = await bundleMDX({
+    const { code, frontmatter }: { code: string, frontmatter: Frontmatter } = await bundleMDX({
         source: String(source),
         mdxOptions(options) {
             options.remarkPlugins = [...(options?.remarkPlugins ?? []), [remarkMath]];
@@ -49,10 +63,8 @@ export const getPost = async (slug: string) => {
         },
     });
 
-    // console.log(frontmatter, code);
-
     return {
-        frontmatter,
-        code,
+        frontmatter: frontmatter,
+        code: code,
     };
 };

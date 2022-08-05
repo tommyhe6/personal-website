@@ -2,14 +2,14 @@ import NextLink from "next/link";
 import { Button, Link } from "@chakra-ui/react";
 
 type Props = {
-    navName: string;
-    variant?: string;
-    url?: string;
-    size?: string;
-    isExternal?: boolean;
+    navName: string,
+    variant?: string,
+    url?: string,
+    size?: string,
+    isExternal?: boolean,
 };
 
-const NavItemLink = ({ navName, variant="link", url="", size="sm", isExternal=false }: Props) => {
+const NavItemButton: (props: Props) => JSX.Element = ({ navName, variant="link", url="", size="sm", isExternal=false }) => {
     url = url == "" ? `${url}/${navName.toLowerCase()}` : url;
     return (
         <NextLink href={url} passHref>
@@ -22,4 +22,4 @@ const NavItemLink = ({ navName, variant="link", url="", size="sm", isExternal=fa
     );
 };
 
-export default NavItemLink;
+export default NavItemButton;

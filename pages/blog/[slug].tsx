@@ -1,29 +1,39 @@
-import React from "react";
 import { getMDXComponent } from "mdx-bundler/client";
-import { getAllPosts, getPost } from "../../postsUtils";
+import type { MDXContentProps } from "mdx-bundler/client";
+import { getAllPosts, getPost, MdxBody } from "../../blogUtils";
+import { VStack, Heading, Text } from "@chakra-ui/react";
+import React from "react";
 
-const Post = ({ code, frontmatter }: any) => {
-    // console.log(code, frontmatter);
-    // console.log(code);
-    // const Component = React.useMemo(() => getMDXComponent(code), [code]);
-    const Component = getMDXComponent(code);
+type Path = {
+    params: {
+        slug: string;
+    }
+}
+
+const Post = ({ frontmatter, code }: MdxBody) => {
+    const Component: React.FunctionComponent<MDXContentProps> = React.useMemo(() => getMDXComponent(code), [code]);
     return (
-        <div className="wrapper">
-            <h1>{frontmatter.title}</h1>
+        <VStack spacing={3} align="front">
+            <Heading as="h1" size="lg">
+                {frontmatter.title}
+            </Heading>
+            <Text size="md" color="lightgray">
+                {frontmatter.date}
+            </Text>
             <Component />
-        </div>
+        </VStack>
     );
 };
 
-export const getStaticProps = async ({ params }: any) => {
-    const post = await getPost(params.slug);
+export const getStaticProps = async ({ params }: Path) => {
+    const post: MdxBody = await getPost(params.slug);
     return {
         props: { ...post },
     };
 };
 
 export const getStaticPaths = async () => {
-    const paths = getAllPosts().map(({ slug }: any) => ({ params: { slug } }));
+    const paths: Path[] = getAllPosts().map(({ slug }: { slug: string }) => ({ params: { slug } }));
     return {
         paths,
         fallback: false,

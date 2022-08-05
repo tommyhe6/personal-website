@@ -3,10 +3,10 @@ import Contact from "./Contact";
 import { VStack, Spacer } from "@chakra-ui/react";
 
 type Props = {
-    children: JSX.Element;
-}
+    children: JSX.Element,
+};
 
-const Layout = ({ children }: Props) => {
+const Layout: (props: Props) => JSX.Element = ({ children }) => {
     return (
         <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

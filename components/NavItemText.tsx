@@ -2,14 +2,15 @@ import NextLink from "next/link";
 import { Link, Text } from "@chakra-ui/react";
 
 type Props = {
-    label: string;
-    url: string;
+    label: string,
+    url: string,
+    isExternal?: boolean,
 };
 
-const NavItemText = ({ label, url }: Props) => {
+const NavItemText: (props: Props) => JSX.Element = ({ label, url, isExternal=false}) => {
     return (
         <NextLink href={url} passHref>
-            <Link color="redbrown">
+            <Link color="redbrown" isExternal={isExternal}>
                 {label}
             </Link>
         </NextLink>

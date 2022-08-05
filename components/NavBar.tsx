@@ -1,20 +1,20 @@
-import NavItemLink from "../components/NavItemLink";
+import NavItemButton from "../components/NavItemButton";
 import { Spacer, Flex, HStack, Link, Text, IconButton, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons"
 import NextLink from "next/link";
 
-const NavBar = () => {
+const NavBar: () => JSX.Element = () => {
     const { colorMode, toggleColorMode } = useColorMode()
 
     return (
         <Flex direction="row" alignSelf="stretch" justifyContent="space-between">
-            <NavItemLink navName="TOMMY" url="/" size="lg"/>
+            <NavItemButton navName="TOMMY" url="/" size="lg"/>
             <HStack as="nav">
-                <NavItemLink navName="Projects"/>
+                <NavItemButton navName="Projects"/>
                 <Text>|</Text>
-                <NavItemLink navName="Writeups"/>
+                <NavItemButton navName="Writeups"/>
                 <Text>|</Text>
-                <NavItemLink navName="Blog"/>
+                <NavItemButton navName="Blog"/>
                 <Text>|</Text>
                 <IconButton aria-label="color mode" variant="link" onClick={toggleColorMode}>
                     { colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }

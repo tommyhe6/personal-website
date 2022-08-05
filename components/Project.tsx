@@ -1,16 +1,16 @@
 import { Heading, Box, VStack, Text, Icon, HStack, Image } from "@chakra-ui/react";
 
 type Props = {
-    title: string;
-    context: string;
-    desc: string;
-    time: string;
-    img?: string;
-    techIcons?: JSX.Element[];
-    demos?: JSX.Element[];
+    title: string,
+    context: string,
+    desc: string,
+    time: string,
+    img?: string,
+    techIcons?: JSX.Element[],
+    demos?: JSX.Element[],
 };
 
-const Project = ({ title, context, desc, time, img="", techIcons=[], demos=[] }: Props) => {
+const Project: (props: Props) => JSX.Element = ({ title, context, desc, time, img="", techIcons=[], demos=[] }) => {
     return (
         <VStack w="30vw" h="70vh" p={5} spacing="2vh" align="center">
             <VStack spacing="0.5vh">

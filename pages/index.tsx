@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar";
-import NavItemLink from "../components/NavItemLink";
+import NavItemButton from "../components/NavItemButton";
 import NavItemText from "../components/NavItemText";
-import { Text, Box, Flex, Heading, Spacer, VStack, Button, Icon, Image, Link } from "@chakra-ui/react";
+import { Text, Box, Flex, Heading, Spacer, VStack, Button, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Typewriter from "typewriter-effect";
 import type { NextPage } from "next";
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             </Flex>
             <Flex h="15vh" flexDirection="column" alignItems="center">
                 <Spacer />
-                <NavItemLink navName="Resume" variant="outline" url="Tommy_He_Resume.pdf" size="md" isExternal={true}/>
+                <NavItemButton navName="Resume" variant="outline" url="Tommy_He_Resume.pdf" size="md" isExternal={true}/>
                 <Spacer />
             </Flex>
         </Flex>

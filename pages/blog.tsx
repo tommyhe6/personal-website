@@ -1,32 +1,30 @@
-import Post from "../components/Post";
-import { getAllPosts } from "../postsUtils";
+import PostItem from "../components/PostItem";
+import { getAllPosts, MdxMeta } from "../blogUtils";
 import NextLink from "next/link";
 import { Heading, VStack, Text, List, ListItem } from "@chakra-ui/react";
+import type { NextPage } from "next";
 
 type Props = {
-    fontmatter: {
-        title: string,
-        date: string,
-        description: string
-    },
-    slug: string
-}[];
+    posts: MdxMeta[],
+};
 
-const posts = ({ posts }: any) => {
+const posts: NextPage<Props> = ({ posts }) => {
     return (
         <VStack spacing="2vh">
             <Heading as="h1" size="lg">
-                 My Blog
-             </Heading>
+                My Blog
+            </Heading>
             <Text>
-            Here will contain a collection of posts that I&#39;ve written up on interesting topics I&#39;ve found including mathematics, computer science, web dev, books, and my travel.
+                Here will contain a collection of posts that I&#39;ve written up on interesting topics I&#39;ve found including mathematics, computer science, web dev, books, and my travel.
             </Text>
             <List spacing={5}>
-                {posts.map((post: any, index: number) => {
-                    // console.log(post.slug, index);
+                {posts
+                .sort((a, b) => (
+                    new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+                ))
+                .map((post: MdxMeta, index: number) => {
                     return <ListItem key={index}>
-                        <Post post={post} />
-                        {/* <NextLink href={`posts/${post.slug}`}>{post.frontmatter.title + " date: " + post.frontmatter.date}</NextLink> */}
+                        <PostItem post={post} />
                     </ListItem>
                 })}
             </List>
@@ -34,8 +32,8 @@ const posts = ({ posts }: any) => {
     );
 };
 
-export const getStaticProps = async () => {
-    const posts = getAllPosts();
+export const getStaticProps = async (): Promise<{ props: { posts: MdxMeta[] } }> => {
+    const posts: MdxMeta[] = getAllPosts();
 
     return {
         props: { posts },
