@@ -5,18 +5,20 @@ import { Heading, VStack, HStack, Flex, Divider } from "@chakra-ui/react";
 import { SiNextdotjs, SiFlask, SiExpress, SiTensorflow, SiDevpost, SiGithub  } from "react-icons/si";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 
+type Project = {
+    id: string,
+    value: JSX.Element,
+}
+
 const projects: NextPage = () => {
-    const projects: JSX.Element[] = [
+    const projects: Project[] = [
         { id : "ThreatMap", value : <Project 
             title="ThreatMap" 
             context="Hacktech top 3 ML hack" 
             desc="Scrapes news articles to find high risk locations and levels of danger to help user safety through web app" 
             time="May 2022" 
             img="/projects/ThreatMap.png" 
-            techIcons={[
-                <SiNextdotjs key={0} />,
-                <SiFlask key={1} />,
-            ]} 
+            techStack={["Next.js", "Flask", "nltk", "Newspaper.py", "javascript", "python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/jezheng20/ThreatMap" />, 
                 <NavItemIcon key={1} label="demo" icon={<BsBoxArrowUpRight />} url="" />, 
@@ -29,10 +31,8 @@ const projects: NextPage = () => {
             desc="Gives live feedback for similarity between user’s dance and target dance through web app" 
             time="Jan. 2021" 
             img="/projects/TikTok.png" 
-            techIcons={[
-                <SiTensorflow key={0} />,
-                <SiExpress key={1} />,
-            ]} demos={[
+            techStack={["Tensorflow", "Express.js", "HTML", "CSS", "javascript"]}
+            demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/nkkoran/TikTokDanceTrainer" />,
                 <NavItemIcon key={1} label="devpost" icon={<SiDevpost />} url="https://devpost.com/software/tiktok-dance-trainer" />,
             ]} />
@@ -43,6 +43,7 @@ const projects: NextPage = () => {
             desc="Toolbox for improved online learning including a virtual whiteboard, gesture detection, and automatic verbal comparison" 
             time="Sept. 2020" 
             img="/projects/Virtual.png" 
+            techStack={["OpenCV", "Tensorflow", "SpeechRecognition.py", "GloVe", "python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/SooshiCircle/virtualclasstools" />,
             ]}/>
@@ -53,6 +54,7 @@ const projects: NextPage = () => {
             desc="Current Personal Website, used as a resume, contact, and blog" 
             time="Aug. 2022" 
             img="/projects/Personal.png" 
+            techStack={["Next.js", "Chakra UI", "mdx-bundler", "typescript"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/THe142857/personal-website" />,
                 <NavItemIcon key={1} label="demo" icon={<BsBoxArrowUpRight />} url="/" />,
@@ -65,6 +67,7 @@ const projects: NextPage = () => {
             desc="Chess GUI interface with LAN playability and AI bot" 
             time="2019" 
             img="/projects/Chess.png" 
+            techStack={["tkinter", "PIL", "socket.py", "minimax", "python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/THe142857/Chess" />,
             ]}/>
@@ -73,6 +76,7 @@ const projects: NextPage = () => {
             context="Blueprint Advanced Division 3rd Place" 
             desc="Musical transcription with an encryption scheme based on pieces with automatic decoder" 
             time="Feb. 2020" img="/projects/Musical.png" 
+            techStack={["Pyaudio", "FFT", "lilypond", "MCMC", "python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/meganfrisella/blueprint2020" />,
                 <NavItemIcon key={1} label="devpost" icon={<SiDevpost />} url= "https://devpost.com/software/music-transcription-encryption-and-decryption"/>,
@@ -84,16 +88,22 @@ const projects: NextPage = () => {
             desc="Web app that allows users to chat in private room with live code sharing and compilation" 
             time="2021" 
             img="/projects/Compile.png" 
+            techStack={["Express.js", "Socket.IO", "docker", "HTML", "CSS", "javascript"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/THe142857/Chatting-while-Compiling" />,
             ]}/>
         },
     ];
 
-    const projectsTranform = projects.reduce(
-        (ret, cur, i) =>  
-            (i % 2 == 0 ? ret.push([cur]) : ret[ret.length - 1].push(cur)) && ret
-        , []);
+    const projectsTranform = projects.reduce<Project[][]>(
+        (ret: Project[][], cur: Project, i: number) => {
+            if (i % 2 == 0) {
+                ret.push([cur])
+            } else {
+                ret[ret.length - 1].push(cur);
+            }
+            return ret;
+        }, []);
 
     return (
         <VStack spacing="5vh">
@@ -101,11 +111,11 @@ const projects: NextPage = () => {
                 Selected Projects
             </Heading>
             {projectsTranform.map(([i1, i2]) => 
-            <Flex key = {`${i1.id} ${i2 ? i2.id : ""}`} w="60vw" direction="row" justifyContent="space-between">
-                {i1.value}
-                {i2 ? <Divider orientation="vertical"/> : ""}
-                {i2 ? i2.value : ""}
-            </Flex>
+                <Flex key = {`${i1.id} ${i2 ? i2.id : ""}`} w="60vw" direction="row" justifyContent="space-between">
+                    {i1.value}
+                    {i2 ? <Divider orientation="vertical"/> : ""}
+                    {i2 ? i2.value : ""}
+                </Flex>
             )}
         </VStack>
     );

@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import { Heading, Box, VStack, Text, Icon, HStack, Image, chakra } from "@chakra-ui/react";
+import { Heading, Box, VStack, Text, Icon, HStack, Image, Tag, chakra } from "@chakra-ui/react";
 
 type Props = {
     title: string,
@@ -7,13 +7,13 @@ type Props = {
     desc: string,
     time: string,
     img?: string,
-    techIcons?: JSX.Element[],
+    techStack?: string[],
     demos?: JSX.Element[],
 };
 
-const Project: (props: Props) => JSX.Element = ({ title, context, desc, time, img="", techIcons=[], demos=[] }) => {
+const Project: (props: Props) => JSX.Element = ({ title, context, desc, time, img="", techStack=[], demos=[] }) => {
     const MyImage = chakra(Image, {
-        shouldForwardProps: (prop) => ["width", "height", "src", "alt"].include(prop)
+        shouldForwardProps: (prop: string) => ["width", "height", "src", "alt"].includes(prop)
     });
 
     return (
@@ -27,15 +27,12 @@ const Project: (props: Props) => JSX.Element = ({ title, context, desc, time, im
                 </Text>
             </VStack>
             <MyImage src={img} alt={title} size="sm" />
-            {/* <NextImage src={img} layout="fill"> */}
-            {/* <Image alt={title} src={img} boxSize="sm"/> */}
-            {/* </NextImage> */}
             <Text as="p" fontSize="sm">
                 {desc}
             </Text>
             <HStack>
-                {techIcons.map(
-                    (icon) => (icon)
+                {techStack.map(
+                    (tech, index) => <Tag key={index}>{tech}</Tag>
                 )}
             </HStack>
             <HStack>
