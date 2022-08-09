@@ -1,4 +1,3 @@
-import { getMDXComponent } from "mdx-bundler/client";
 import type { MDXContentProps } from "mdx-bundler/client";
 import { getAllPosts, getPost, MdxBody } from "../../blogUtils";
 import { VStack, Heading, Text } from "@chakra-ui/react";

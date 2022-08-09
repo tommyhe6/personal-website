@@ -18,7 +18,8 @@ const projects: NextPage = () => {
             desc="Scrapes news articles to find high risk locations and levels of danger to help user safety through web app" 
             time="May 2022" 
             img="/projects/ThreatMap.png" 
-            techStack={["Next.js", "Flask", "nltk", "Newspaper.py", "javascript", "python"]}
+            techStack={["Next.js", "Flask", "nltk", "Newspaper.py"]}
+            techLang={["javascript", "python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/jezheng20/ThreatMap" />, 
                 <NavItemIcon key={1} label="demo" icon={<BsBoxArrowUpRight />} url="" />, 
@@ -31,7 +32,8 @@ const projects: NextPage = () => {
             desc="Gives live feedback for similarity between user’s dance and target dance through web app" 
             time="Jan. 2021" 
             img="/projects/TikTok.png" 
-            techStack={["Tensorflow", "Express.js", "HTML", "CSS", "javascript"]}
+            techStack={["Tensorflow", "Express.js"]}
+            techLang={["HTML", "CSS", "javascript"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/nkkoran/TikTokDanceTrainer" />,
                 <NavItemIcon key={1} label="devpost" icon={<SiDevpost />} url="https://devpost.com/software/tiktok-dance-trainer" />,
@@ -43,7 +45,8 @@ const projects: NextPage = () => {
             desc="Toolbox for improved online learning including a virtual whiteboard, gesture detection, and automatic verbal comparison" 
             time="Sept. 2020" 
             img="/projects/Virtual.png" 
-            techStack={["OpenCV", "Tensorflow", "SpeechRecognition.py", "GloVe", "python"]}
+            techStack={["OpenCV", "Tensorflow", "SpeechRecognition.py", "GloVe"]}
+            techLang={["python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/SooshiCircle/virtualclasstools" />,
             ]}/>
@@ -54,7 +57,8 @@ const projects: NextPage = () => {
             desc="Current Personal Website, used as a resume, contact, and blog" 
             time="Aug. 2022" 
             img="/projects/Personal.png" 
-            techStack={["Next.js", "Chakra UI", "mdx-bundler", "typescript"]}
+            techStack={["Next.js", "Chakra UI", "mdx-bundler"]} 
+            techLang={["typescript"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/THe142857/personal-website" />,
                 <NavItemIcon key={1} label="demo" icon={<BsBoxArrowUpRight />} url="/" />,
@@ -67,7 +71,8 @@ const projects: NextPage = () => {
             desc="Chess GUI interface with LAN playability and AI bot" 
             time="2019" 
             img="/projects/Chess.png" 
-            techStack={["tkinter", "PIL", "socket.py", "minimax", "python"]}
+            techStack={["tkinter", "PIL", "socket.py", "minimax"]}
+            techLang={["python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/THe142857/Chess" />,
             ]}/>
@@ -76,7 +81,8 @@ const projects: NextPage = () => {
             context="Blueprint Advanced Division 3rd Place" 
             desc="Musical transcription with an encryption scheme based on pieces with automatic decoder" 
             time="Feb. 2020" img="/projects/Musical.png" 
-            techStack={["Pyaudio", "FFT", "lilypond", "MCMC", "python"]}
+            techStack={["Pyaudio", "FFT", "lilypond", "MCMC"]}
+            techLang={["python"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/meganfrisella/blueprint2020" />,
                 <NavItemIcon key={1} label="devpost" icon={<SiDevpost />} url= "https://devpost.com/software/music-transcription-encryption-and-decryption"/>,
@@ -88,7 +94,8 @@ const projects: NextPage = () => {
             desc="Web app that allows users to chat in private room with live code sharing and compilation" 
             time="2021" 
             img="/projects/Compile.png" 
-            techStack={["Express.js", "Socket.IO", "docker", "HTML", "CSS", "javascript"]}
+            techStack={["Express.js", "Socket.IO", "docker"]}
+            techLang={["HTML", "CSS", "javascript"]}
             demos={[
                 <NavItemIcon key={0} label="github" icon={<SiGithub />} url="https://github.com/THe142857/Chatting-while-Compiling" />,
             ]}/>
