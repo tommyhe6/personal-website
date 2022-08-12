@@ -1,7 +1,7 @@
 ---
 title: Using Next.js + Chakra UI For Responsive Website and Blog
 date: "August 8, 2022"
-description: Overview of This website's construction and Tips for Using Next.js, Chakra UI With typescript
+description: Overview of This website's Construction and Tips for Using Next.js, Chakra UI With Typescript
 ---
 ## Next.js
 Next.js is essentially a frontend framework built on top of React.js with many nice features for development and user experience added on top. Why would you choose Next.js over React.js? Out of the box, Next.js supports server side rendering (SSR) and static site generation (SSG), of which we'll be using SSG for the blog pages for faster user experience. SSR pre-renders the page on the server at every request, so the data will be up to date. SSG will pre-render the page at build time and can provide the static site to be served instantly, though the data may become stale. By default, React uses client side rendering (CSR) a.k.a. single page application (SPA), which sends a js file to the client, where the client browser will then generate the page. Though it is possible to set up SSR or SSG in React, it would require setting up your server and configuration, whereas Next.js natively supports these with just a couple lines of code.
