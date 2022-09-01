@@ -1,7 +1,7 @@
-import { getMDXComponent } from "mdx-bundler/client";
-import type { MDXContentProps } from "mdx-bundler/client";
+import { getMDXComponent, type MDXContentProps } from "mdx-bundler/client";
 import { getAllPosts, getPost, MdxBody } from "../../blogUtils";
 import { VStack, Heading, Text } from "@chakra-ui/react";
+import Head from "next/head";
 import React from "react";
 
 type Path = {
@@ -14,6 +14,12 @@ const Post = ({ frontmatter, code }: MdxBody) => {
     const Component: React.FunctionComponent<MDXContentProps> = React.useMemo(() => getMDXComponent(code), [code]);
     return (
         <VStack spacing={3} align="front">
+            <Head>
+                <title>
+                    {frontmatter.title}
+                </title>
+                <meta name="description" content={frontmatter.description} />
+            </Head>
             <Heading as="h1" size="lg">
                 {frontmatter.title}
             </Heading>

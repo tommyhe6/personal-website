@@ -49,7 +49,7 @@ export const getPost = async (slug: string): Promise<MdxBody> => {
         source: String(source),
         mdxOptions(options) {
             options.remarkPlugins = [...(options?.remarkPlugins ?? []), [remarkMath]];
-            options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeMathjax, {
+            options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeKatex, {
                 tex: {
                     inlineMath: [              
                         ["\\(", "\\)"]

@@ -1,21 +1,23 @@
 ---
 title: Using Next.js + Chakra UI For Responsive Website and Blog
-date: "August 8, 2022"
+date: August 8, 2022
 description: Overview of This website's Construction and Tips for Using Next.js, Chakra UI With Typescript
 ---
-## Next.js
+import { Text } from "@chakra-ui/react";
+
+# Next.js 1
 Next.js is essentially a frontend framework built on top of React.js with many nice features for development and user experience added on top. Why would you choose Next.js over React.js? Out of the box, Next.js supports server side rendering (SSR) and static site generation (SSG), of which we'll be using SSG for the blog pages for faster user experience. SSR pre-renders the page on the server at every request, so the data will be up to date. SSG will pre-render the page at build time and can provide the static site to be served instantly, though the data may become stale. By default, React uses client side rendering (CSR) a.k.a. single page application (SPA), which sends a js file to the client, where the client browser will then generate the page. Though it is possible to set up SSR or SSG in React, it would require setting up your server and configuration, whereas Next.js natively supports these with just a couple lines of code.
 
-## Chakra UI
+## Chakra UI 2
 Chakra UI is a component library that provides many React components with premade styling props to help style components easier. For instance, it provides the component Button along with many props such as colorScheme and size, which will all adhere to Chakra's styling for a consistent application frontend.
 
-## Compiling MDX documents
+### Compiling MDX documents
 
-I found integrating MDX documents that supported both latex and components to be a headache to figure out, so I wanted to write out what I had found. I found the [article](https://dev.to/tylerlwsmith/quick-comparison-of-mdx-integration-strategies-with-next-js-1kcm) by Tyler Smith to be super helpful. After testing, I found
+I found integrating MDX documents that supported both latex and components to be a headache to figure out, so I wanted to write out what I had found. I found [this article](https://dev.to/tylerlwsmith/quick-comparison-of-mdx-integration-strategies-with-next-js-1kcm) by Tyler Smith to be super helpful. After testing, I found
 1. [@next/mdx](https://www.npmjs.com/package/@next/mdx) to be lacking in documentation without support for frontmatter
 2. [next-mdx-remote](https://www.npmjs.com/package/next-mdx-remote) to not support latex compilers like KaTex ([Github Issue](https://github.com/hashicorp/next-mdx-remote/issues/221)) at their most recent versions
 3. [mdx-bundler](https://www.npmjs.com/package/mdx-bundler) worked well
-
+<span style={{color:"blue"}}>some *blue* text</span>
 ```
 export const getStaticProps = async ({ params }: Path) => {
     const post: MdxBody = await getPost(params.slug);

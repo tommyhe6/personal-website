@@ -15,7 +15,7 @@
     "@chakra-ui/system": "^2.2.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@fontsource/merriweather": "^4.5.12",
+    "@fontsource/montserrat": "^4.5.12",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.0.0",
     "@mdx-js/react": "^2.1.2",

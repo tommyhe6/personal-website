@@ -1,9 +1,10 @@
-import type { NextPage } from "next";
 import Project from "../components/Project";
 import NavItemIcon from "../components/NavItemIcon";
 import { Heading, VStack, HStack, Flex, Divider } from "@chakra-ui/react";
 import { SiNextdotjs, SiFlask, SiExpress, SiTensorflow, SiDevpost, SiGithub  } from "react-icons/si";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import Head from "next/head";
+import type { NextPage } from "next";
 
 type Project = {
     id: string,
@@ -113,18 +114,24 @@ const projects: NextPage = () => {
         }, []);
 
     return (
-        <VStack spacing="5vh">
-            <Heading as="h1" size="lg">
-                Selected Projects
-            </Heading>
-            {projectsTranform.map(([i1, i2]) => 
-                <Flex key = {`${i1.id} ${i2 ? i2.id : ""}`} w="60vw" direction="row" justifyContent="space-between">
-                    {i1.value}
-                    {i2 ? <Divider orientation="vertical"/> : ""}
-                    {i2 ? i2.value : ""}
-                </Flex>
-            )}
-        </VStack>
+        <>
+            <Head>
+                <title>Projects</title>
+                <meta name="description" content="Selected projects I've done in the past including hackathon and personal projects" />
+            </Head>
+            <VStack spacing="5vh">
+                <Heading as="h1" size="lg">
+                    Selected Projects
+                </Heading>
+                {projectsTranform.map(([i1, i2]) => 
+                    <Flex key = {`${i1.id} ${i2 ? i2.id : ""}`} w="60vw" direction="row" justifyContent="space-between">
+                        {i1.value}
+                        {i2 ? <Divider orientation="vertical"/> : ""}
+                        {i2 ? i2.value : ""}
+                    </Flex>
+                )}
+            </VStack>
+            </>
     );
 };
 
