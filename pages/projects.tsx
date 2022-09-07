@@ -120,7 +120,7 @@ const projects: NextPage = () => {
                 <meta name="description" content="Selected projects I've done in the past including hackathon and personal projects" />
             </Head>
             <VStack spacing="5vh">
-                <Heading as="h1" size="lg">
+                <Heading as="h1">
                     Selected Projects
                 </Heading>
                 {projectsTranform.map(([i1, i2]) => 

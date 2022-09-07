@@ -20,7 +20,7 @@ const Post = ({ frontmatter, code }: MdxBody) => {
                 </title>
                 <meta name="description" content={frontmatter.description} />
             </Head>
-            <Heading as="h1" size="lg">
+            <Heading as="h1">
                 {frontmatter.title}
             </Heading>
             <Text size="md" color="lightgray">

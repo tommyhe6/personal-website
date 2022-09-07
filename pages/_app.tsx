@@ -14,8 +14,22 @@ const theme: ThemeConfig = extendTheme({
     },
     colors: {
         redbrown: "#c41e07",
-        // gray: "#666666"
-        lightgray: "#909090"
+        lightgray: "#909090",
+        white: "#FAF9F6"
+    },
+    styles: {
+        global: {
+            h1: {
+                fontSize: "2xl",
+                fontWeight: "bold"
+            },
+            h2: {
+                fontSize: "xl"
+            },
+            h3: {
+                fontSize: "lg"
+            },
+        }
     }
 });
 

@@ -19,7 +19,7 @@ const posts: NextPage<Props> = ({ posts }) => {
                 <meta name="description" content="My blog that includes interesting topics I&#39;ve found including mathematics, computer science, web dev, books, and my travel" />
             </Head>
             <VStack spacing="2vh">
-                <Heading as="h1" size="lg">
+                <Heading as="h1">
                     My Blog
                 </Heading>
                 <Text>

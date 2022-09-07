@@ -10,7 +10,7 @@ const papers: NextPage = () => {
                 <title>Writeups</title>
             </Head>
             <VStack spacing="2vh">
-                <Heading as="h1" size="lg">
+                <Heading as="h1">
                     Writeups
                 </Heading>
                 <meta name="description" content="Various reports, papers, and notes that I've written up that may be of value" />
@@ -18,13 +18,13 @@ const papers: NextPage = () => {
                     Various reports, papers, and notes that I&#39;ve written up that may be of value
                 </Text>
                 <VStack w="60vw" align="start">
-                    <Heading as="h3" size="sm">
+                    <Heading as="h3" size="md">
                         Projects
                     </Heading>
                     <NavItemText label="Introduction to Isogeny Based Cryptography" url="/writeups/COMP400Paper.pdf" isExternal={true} />
-                    <NavItemText label="Introduction to Graph Neural Networks and Their Expressive Power" url="/writeups//GNNs.pdf" isExternal={true} />
+                    <NavItemText label="Introduction to Graph Neural Networks and Their Expressive Power" url="/writeups/GNNs.pdf" isExternal={true} />
                     <NavItemText label="Spectral Norm Regularization for Improving the the Generalizability of Deep Learning" url="/writeups/COMP562Report.pdf" isExternal={true} />
-                    <Heading as="h3" size="sm">
+                    <Heading as="h3" size="md">
                         Notes
                     </Heading>
                     <NavItemText label="COMP562 Theory of Machine Learning Notes" url="/writeups/COMP562Notes.pdf" isExternal={true} />

@@ -5,7 +5,7 @@ import { bundleMDX } from "mdx-bundler";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeMathjax from "rehype-mathjax";
-// import rehypePrism from "rehype-prism";
+ import rehypePrism from "rehype-prism";
 
 type Frontmatter = {
     [key: string]: string,
@@ -49,7 +49,7 @@ export const getPost = async (slug: string): Promise<MdxBody> => {
         source: String(source),
         mdxOptions(options) {
             options.remarkPlugins = [...(options?.remarkPlugins ?? []), [remarkMath]];
-            options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeKatex, {
+            options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeMathjax, {
                 tex: {
                     inlineMath: [              
                         ["\\(", "\\)"]
@@ -58,7 +58,7 @@ export const getPost = async (slug: string): Promise<MdxBody> => {
                         ["\\[", "\\]"]
                     ],
                 }
-            }]];
+            }], [rehypePrism]];
             return options;
         },
     });

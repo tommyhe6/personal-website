@@ -18,7 +18,7 @@ const Home: NextPage = () => {
                 <meta name="description" content="Hey, I'm Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science minor at McGill University. I'm most interested in new technologies with potential for high impact; I'm currently looking into areas of cryptography and machine learning. I also enjoy learning about math, mostly discete math and algebra. I aim to take my strong math background to help gain a deeeper understanding and explore novelties in computer science. Outside of academics, I like playing tennis, ping pong, poker, and trying new things." />
             </Head>
             <Flex h = "100%" direction="column" alignItems="center" justifyContent="space-evenly" p={3}>
-                <Heading as="h1" size="4xl">
+                <Heading as="h1">
                     TOMMY HE
                 </Heading>
                 <Box className={styles.typewriter}>
