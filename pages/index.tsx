@@ -1,4 +1,3 @@
-import NavBar from "../components/NavBar";
 import NavItemButton from "../components/NavItemButton";
 import NavItemText from "../components/NavItemText";
 import { Text, Box, Flex, Heading, Spacer, VStack, Button, Link } from "@chakra-ui/react";
@@ -13,30 +12,36 @@ const Home: NextPage = () => {
         <>
             <Head>
                 <title>
-                    Home
+                    Tommy He
                 </title>
-                <meta name="description" content="Hey, I'm Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science minor at McGill University. I'm most interested in new technologies with potential for high impact; I'm currently looking into areas of cryptography and machine learning. I also enjoy learning about math, mostly discete math and algebra. I aim to take my strong math background to help gain a deeeper understanding and explore novelties in computer science. Outside of academics, I like playing tennis, ping pong, poker, and trying new things." />
+                <meta name="description" content="Hey, I'm Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student at McGill University. I'm most interested in new technologies with potential for high impact." />
             </Head>
-            <Flex h = "100%" direction="column" alignItems="center" justifyContent="space-evenly" p={3}>
-                <Heading as="h1">
+            <Flex flex={1} direction="column" alignItems="center" justify="space-evenly" alignSelf="center">
+                <Spacer />
+                <Spacer />
+                <Spacer />
+                <Heading flex={2} as="h1" textAlign="center">
                     TOMMY HE
                 </Heading>
-                <Box className={styles.typewriter}>
+                <Box flex={1} className={styles.typewriter}>
                     <Typewriter
+                        options={{
+                            cursor: ""
+                        }}
                         onInit={(typewriter) => {
                             typewriter
                                 .changeDelay(80)
-                                .typeString("Curious learner passionate about")
-                                .typeString("<br>mathematics and computer science")
+                                .typeString("Invariably curious. Always learning.")
                                 .start();
                         }}
                         />
                 </Box>
-                <Text>
-                    Hey, I&#39;m Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student with a Cognitive Science minor at McGill University. I&#39;m most interested in new technologies with potential for high impact; I&#39;m currently looking into areas of cryptography and machine learning. I also enjoy learning about math, mostly discete math and algebra. I aim to take my strong math background to help gain a deeeper understanding and explore novelties in computer science. Outside of academics, I like playing tennis, ping pong, poker, and trying new things. If you ever want to discuss anything, feel free to reach out at {" "}
-                    <NavItemText label="tommy@tommyhe.com" url="mailto:tommy@tommyhe.com" />
-                    .
-                </Text>
+                {/* <Text flex={2}> */}
+                {/*     Interested in new technologies with potential for high impact{" "} */}
+                {/*     Interested in taking my math background to gain a stronger understanding and explore novelties in CS */}
+                {/*     <NavItemText label="tommy@tommyhe.com" url="mailto:tommy@tommyhe.com" /> */}
+                {/*     ! */}
+                {/* </Text> */}
                 <NavItemButton navName="Resume" variant="outline" url="Tommy_He_Resume.pdf" size="md" isExternal={true}/>
             </Flex>
             </>

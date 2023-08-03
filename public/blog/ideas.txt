@@ -1,0 +1,4 @@
+powerful mathematics & algorithms
+
+comparison of hashmap algorithms (and vs linear cache friendly ds)
+

@@ -9,7 +9,7 @@ type Props = {
     posts: MdxMeta[],
 };
 
-const posts: NextPage<Props> = ({ posts }) => {
+const Posts: NextPage<Props> = ({ posts }) => {
     return (
         <>
             <Head>
@@ -50,4 +50,4 @@ export const getStaticProps = async (): Promise<{ props: { posts: MdxMeta[] } }>
 
 };
 
-export default posts;
+export default Posts;

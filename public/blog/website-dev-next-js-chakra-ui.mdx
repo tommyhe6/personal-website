@@ -25,6 +25,7 @@ I found integrating MDX documents that supported both latex and components to be
 1. <NavItemText label="@next/mdx" url="https://www.npmjs.com/package/@next/mdx" isExternal={true} /> to be lacking in documentation without support for frontmatter
 2. <NavItemText label="next-mdx-remote" url="https://www.npmjs.com/package/next-mdx-remote" isExternal={true} /> to not support latex compilers like KaTex (<NavItemText label="Github Issue" url="https://github.com/hashicorp/next-mdx-remote/issues/221" isExternal={true} />) at their most recent versions
 3. <NavItemText label="mdx-bundler" url="https://www.npmjs.com/package/mdx-bundler" isExternal={true} /> worked well
+
 ```js
 export const getStaticProps = async ({ params }: Path) => {
     const post: MdxBody = await getPost(params.slug);

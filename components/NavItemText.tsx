@@ -10,7 +10,7 @@ type Props = {
 const NavItemText: (props: Props) => JSX.Element = ({ label, url, isExternal=false}) => {
     return (
         /* <NextLink href={url} passHref> */
-            <Link href={url} color="var(--chakra-colors-redbrown)" isExternal={isExternal}>
+            <Link href={url} isExternal={isExternal}>
                 {label}
             </Link>
         /* </NextLink> */

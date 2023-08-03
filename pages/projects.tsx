@@ -4,6 +4,8 @@ import { Heading, VStack, HStack, Flex, Divider } from "@chakra-ui/react";
 import { SiNextdotjs, SiFlask, SiExpress, SiTensorflow, SiDevpost, SiGithub  } from "react-icons/si";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import Head from "next/head";
+import { useState, useEffect } from "react";
+import { useMediaQuery } from 'react-responsive'
 import type { NextPage } from "next";
 
 type Project = {
@@ -11,7 +13,14 @@ type Project = {
     value: JSX.Element,
 }
 
-const projects: NextPage = () => {
+const Projects: NextPage = () => {
+    const [hydrated, setHydrated] = useState(false);
+    const isDesktop = useMediaQuery({ query: "(min-width: 1224px)" }, hydrated ? undefined : { width: 1224 });
+
+    useEffect(() => {
+        setHydrated(true);
+    }, []);
+
     const projects: Project[] = [
         { id : "ThreatMap", value : <Project 
             title="ThreatMap" 
@@ -123,17 +132,22 @@ const projects: NextPage = () => {
                 <Heading as="h1">
                     Selected Projects
                 </Heading>
-                {projectsTranform.map(([i1, i2]) => 
-                    <Flex key = {`${i1.id} ${i2 ? i2.id : ""}`} w="60vw" direction="row" justifyContent="space-between">
+                {isDesktop && projectsTranform.map(([i1, i2]) => 
+                    <Flex key={`${i1.id} ${i2 ? i2.id : ""}`} w="60vw" direction="row" justifyContent="space-between">
                         {i1.value}
                         {i2 ? <Divider orientation="vertical"/> : ""}
                         {i2 ? i2.value : ""}
                     </Flex>
                 )}
+                {!isDesktop && projects.map((i) => 
+                    <div key={i.id}>
+                        {i.value}
+                    </div>
+                )}  
             </VStack>
             </>
     );
 };
 
-export default projects;
+export default Projects;
 

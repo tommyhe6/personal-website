@@ -13,8 +13,8 @@ const NavItemButton: (props: Props) => JSX.Element = ({ navName, variant="link",
     url = url == "" ? `${url}/${navName.toLowerCase()}` : url;
     return (
         <NextLink href={url} passHref>
-            <Link color="redbrown" isExternal={isExternal}>
-                <Button variant={variant} color="redbrown" size={size}>
+            <Link isExternal={isExternal}>
+                <Button variant={variant} size={size}>
                     {navName}
                 </Button>
             </Link>

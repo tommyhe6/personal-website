@@ -20,7 +20,7 @@ const Project: (props: Props) => JSX.Element = ({ title, context, desc, time, im
     return (
         <VStack w="30vw" h="75vh" p={5} spacing="2vh" align="center">
             <VStack spacing="0.5vh">
-                <Heading as="h3" color="redbrown" size="md" textAlign="center">
+                <Heading as="h3" size="md" textAlign="center">
                     {title}
                 </Heading>
                 <Text as="h6" fontSize="xs" textAlign="center">

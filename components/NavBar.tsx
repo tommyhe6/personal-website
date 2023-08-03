@@ -12,7 +12,7 @@ const NavBar: () => JSX.Element = () => {
             <HStack as="nav">
                 <NavItemButton navName="Projects"/>
                 <Text>|</Text>
-                <NavItemButton navName="Writeups"/>
+                <NavItemButton navName="Writings"/>
                 <Text>|</Text>
                 <NavItemButton navName="Blog"/>
                 <Text>|</Text>
