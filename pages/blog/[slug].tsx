@@ -1,5 +1,6 @@
+import { getAllPosts, getPost, MdxBody } from "blogUtils";
+
 import { getMDXComponent, type MDXContentProps } from "mdx-bundler/client";
-import { getAllPosts, getPost, MdxBody } from "../../blogUtils";
 import { VStack, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
@@ -23,7 +24,7 @@ const Post = ({ frontmatter, code }: MdxBody) => {
             <Heading as="h1">
                 {frontmatter.title}
             </Heading>
-            <Text size="md" color="lightgray">
+            <Text size="md" color="date">
                 {frontmatter.date}
             </Text>
             <Component />

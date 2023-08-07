@@ -3,9 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { bundleMDX } from "mdx-bundler";
 import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 import rehypeMathjax from "rehype-mathjax";
- import rehypePrism from "rehype-prism";
 
 type Frontmatter = {
     [key: string]: string,
@@ -21,7 +19,7 @@ export type MdxBody = {
     code: string,
 };
 
-export const postsDir: string = path.join(process.cwd(), "public/blog");
+export const postsDir: string = path.join(process.cwd(), "public/writings");
 
 export const getSource = (fileName: string): Buffer => {
     return fs.readFileSync(path.join(postsDir, fileName));
@@ -58,7 +56,7 @@ export const getPost = async (slug: string): Promise<MdxBody> => {
                         ["\\[", "\\]"]
                     ],
                 }
-            }], [rehypePrism]];
+            }]];
             return options;
         },
     });

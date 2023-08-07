@@ -1,39 +1,47 @@
-import NavItemText from "../components/NavItemText";
-import { Box, List, VStack, Heading, Text } from "@chakra-ui/react";
+import PostItem from "components/PostItem";
+import { getAllPosts, MdxMeta } from "blogUtils";
+
+import { VStack, List, ListItem } from "@chakra-ui/react";
 import Head from "next/head";
 import type { NextPage } from "next";
 
-const Writings: NextPage = () => {
+type Props = {
+    posts: MdxMeta[],
+};
+
+const Posts: NextPage<Props> = ({ posts }) => {
     return (
         <>
             <Head>
-                <title>Writings</title>
-            </Head>
-            <VStack spacing="2vh">
-                <Heading as="h1">
+                <title>
                     Writings
-                </Heading>
-                <meta name="description" content="Various reports, papers, and notes that I've written up that may be of value" />
-                <Text>
-                    Various reports, papers, and notes that I&#39;ve written up that may be of value
-                </Text>
-                <VStack w="60vw" align="start">
-                    <Heading as="h3" size="md">
-                        Projects
-                    </Heading>
-                    <NavItemText label="Introduction to Isogeny Based Cryptography" url="/writings/COMP400Paper.pdf" isExternal={true} />
-                    <NavItemText label="Introduction to Graph Neural Networks and Their Expressive Power" url="/writings/GNNs.pdf" isExternal={true} />
-                    <NavItemText label="Spectral Norm Regularization for Improving the the Generalizability of Deep Learning" url="/writings/COMP562Report.pdf" isExternal={true} />
-                    <Heading as="h3" size="md">
-                        Notes
-                    </Heading>
-                    <NavItemText label="COMP562 Theory of Machine Learning Notes" url="/writings/COMP562Notes.pdf" isExternal={true} />
-                    <NavItemText label="Solutions to Selected Exercises in Marcus and Others" url="/writings/DRPPaper.pdf" isExternal={true} />
-                </VStack>
+                </title>
+                <meta name="description" content="My writings mostly on interesting topics I&#39;ve found in mathematics and computer science." />
+            </Head>
+            <VStack>
+                <List spacing={5} marginTop="-5">
+                    {posts
+                        .sort((a, b) => (
+                            new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+                        ))
+                        .map((post: MdxMeta, index: number) => {
+                            return <ListItem key={index}>
+                                <PostItem post={post} />
+                            </ListItem>
+                        })}
+                </List>
             </VStack>
-            </>
+        </>
     );
 };
 
-export default Writings;
+export const getStaticProps = async (): Promise<{ props: { posts: MdxMeta[] } }> => {
+    const posts: MdxMeta[] = getAllPosts();
 
+    return {
+        props: { posts },
+    };
+
+};
+
+export default Posts;
