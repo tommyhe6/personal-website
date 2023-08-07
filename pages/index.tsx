@@ -73,18 +73,16 @@ const Home: NextPage = () => {
     const refresh: () => void = () => {
         const cards = draw()
         setCards(cards);
-        setSolReveal(false);
-        setSolExistsReveal(false);
-        setSolExists("solving...");
         setSol("solving...");
+        setSolReveal(false);
+        setSolExists("solving...");
+        setSolExistsReveal(false);
         const [sol, solExists] = solve(cards.map(c => [c % 13 + 1, (c % 13 + 1).toString()]), false);
         setSolExists(solExists ? "yes" : "no");
         setSol(sol);
-    }
+    };
 
-    useEffect(() => {
-        refresh();
-    }, []);
+    useEffect(refresh, []);
 
     return (
         <>
@@ -97,7 +95,7 @@ const Home: NextPage = () => {
             <VStack alignItems="start">
                 <Box lineHeight="1.7em">
                     <Text>
-                        Hey, I'm Tommy! Here's some facts about me
+                        Hey, I&#39;m Tommy! Here&#39;s some facts about me
                     </Text>
                     <UnorderedList marginLeft="10">
                         <ListItem>Previous technical co-founder of <MyLink label="Lumy" url="https://lumy.co" /></ListItem>
@@ -111,7 +109,7 @@ const Home: NextPage = () => {
                 </Box>
                 <Spacer />
                 <Text>
-                    And stay tuned for more writings! In case you're bored, try to make {G} from the following card numbers each exactly once using addition, subtraction, multiplication, or division with any parentheses.
+                    And stay tuned for more writings! In case you&#39;re bored, try to make {G} from the following card numbers each exactly once using addition, subtraction, multiplication, or division with any parentheses.
                 </Text>
 
                 <HStack alignSelf="center" lineHeight="7em">

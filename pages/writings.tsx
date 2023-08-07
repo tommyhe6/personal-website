@@ -19,7 +19,7 @@ const Posts: NextPage<Props> = ({ posts }) => {
                 <meta name="description" content="My writings mostly on interesting topics I&#39;ve found in mathematics and computer science." />
             </Head>
             <VStack>
-                <List spacing={5} marginTop="-5">
+                <List spacing={5}>
                     {posts
                         .sort((a, b) => (
                             new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
