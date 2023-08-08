@@ -90,7 +90,7 @@ const Home: NextPage = () => {
                 <title>
                     Tommy He
                 </title>
-                <meta name="description" content="Hey, I'm Tommy! I am a U3 B.Sc. Honors Mathematics & Computer Science student at McGill University. I'm most interested in new technologies with potential for high impact." />
+                <meta name="description" content="Hey, I'm Tommy! I enjoy hard technical challenges." />
             </Head>
             <VStack alignItems="start">
                 <Box lineHeight="1.7em">
