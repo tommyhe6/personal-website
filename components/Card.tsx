@@ -14,7 +14,7 @@ const card = [
 const Card: (props: Props) => JSX.Element = ({ num }) => {
     return (
         <>
-            <Box fontSize="9xl" color={num < 26 ? "black" : "red"}>
+            <Box fontSize={["8xl", "9xl"]} color={num < 26 ? "black" : "red"}>
                 {card[num]}
             </Box>
         </>
