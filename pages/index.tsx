@@ -98,8 +98,8 @@ const Home: NextPage = () => {
                         Hey, I&#39;m Tommy! Here&#39;s some facts about me
                     </Text>
                     <UnorderedList marginLeft="10">
-                        <ListItem>Previous technical co-founder of <MyLink label="Lumy" url="https://lumy.co" /></ListItem>
-                        <ListItem>Currently a C++ dev at <MyLink label="Tower Research Capital" url="https://www.tower-research.com" /></ListItem>
+                        <ListItem>Technical co-founder of <MyLink label="Lumy" url="https://lumy.co" /></ListItem>
+                        <ListItem>Previous a C++ dev at <MyLink label="Tower Research Capital" url="https://www.tower-research.com" /></ListItem>
                         <ListItem>Interested in ML, systems programming, and cryptography</ListItem>
                         <ListItem>Studied Math & CS at McGill</ListItem>
                         <ListItem>Currently training for a marathon</ListItem>
