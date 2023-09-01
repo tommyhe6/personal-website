@@ -26,18 +26,21 @@ export const getSource = (fileName: string): Buffer => {
 };
 
 export const getAllPosts = (): MdxMeta[] => {
+    if (!fs.existsSync(postsDir)) {
+        return [];
+    }
     return fs
-    .readdirSync(postsDir)
-    .map((file) => {
-        const source: Buffer = getSource(file);
-        const slug: string = file.replace(/\.mdx?$/, "");
-        const { data }: { data: Frontmatter } = matter(source);
+        .readdirSync(postsDir)
+        .map((file) => {
+            const source: Buffer = getSource(file);
+            const slug: string = file.replace(/\.mdx?$/, "");
+            const { data }: { data: Frontmatter } = matter(source);
 
-        return {
-            frontmatter: data,
-            slug: slug,
-        };
-    });
+            return {
+                frontmatter: data,
+                slug: slug,
+            };
+        });
 };
 
 export const getPost = async (slug: string): Promise<MdxBody> => {
@@ -49,7 +52,7 @@ export const getPost = async (slug: string): Promise<MdxBody> => {
             options.remarkPlugins = [...(options?.remarkPlugins ?? []), [remarkMath]];
             options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeMathjax, {
                 tex: {
-                    inlineMath: [              
+                    inlineMath: [
                         ["\\(", "\\)"]
                     ],
                     displayMath: [
