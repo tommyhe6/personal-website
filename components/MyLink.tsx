@@ -4,15 +4,14 @@ import { Link } from "@chakra-ui/react";
 type Props = {
     label: string,
     url: string,
+    isExternal?: boolean,
 };
 
-const MyLink: (props: Props) => JSX.Element = ({ label, url }) => {
+const MyLink: (props: Props) => JSX.Element = ({ label, url, isExternal }) => {
     return (
-        <NextLink href={url} passHref>
-            <Link href={url} fontWeight="bold" textColor="link">
-                {label}
-            </Link>
-        </NextLink>
+        <Link as={NextLink} href={url} fontWeight="bold" textColor="link" isExternal={isExternal}>
+            {label}
+        </Link>
 
     );
 };

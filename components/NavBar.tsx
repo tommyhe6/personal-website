@@ -4,11 +4,11 @@ import { Flex, HStack, Text } from "@chakra-ui/react";
 
 const NavBar: () => JSX.Element = () => {
     return (
-        <Flex direction="row" alignSelf="stretch" as="h1" marginBottom="1em">
+        <Flex direction="row" alignSelf="stretch" marginBottom="1em">
             <HStack>
-                <NavItemText label="Tommy He" url="/" fontSize="2xl" />
+                <NavItemText label="Tommy He" url="/" fontSize="3xl" />
                 <Text>|</Text>
-                <NavItemText label="Writings" url="/writings" fontSize="2xl" />
+                <NavItemText label="Writings" url="/writings" fontSize="3xl" />
             </HStack>
         </Flex>
     );

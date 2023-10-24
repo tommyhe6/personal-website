@@ -9,15 +9,13 @@ type Props = {
 
 const Layout: (props: Props) => JSX.Element = ({ children }) => {
     return (
-        <Box>
-            <VStack minHeight="100vh" width="80vw" margin="auto" paddingY="3">
-                <NavBar />
-                <Box flexGrow={1} display="flex">
-                    {children}
-                </Box>
-                <Contact />
-            </VStack>
-        </Box>
+        <VStack minHeight="100vh" width="80vw" margin="auto" paddingY="3">
+            <NavBar />
+            <Box width="100%" flexGrow={1}>
+                {children}
+            </Box>
+            <Contact />
+        </VStack>
     );
 };
 

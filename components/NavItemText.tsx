@@ -4,17 +4,14 @@ import { Link } from "@chakra-ui/react";
 type Props = {
     label?: string,
     url: string,
-    isExternal?: boolean,
-    fontSize: string,
+    fontSize?: string,
 };
 
 const NavItemText: (props: Props) => JSX.Element = ({ label, url, fontSize }) => {
     return (
-        <NextLink href={url} passHref>
-            <Link href={url} fontSize={fontSize} fontWeight="bold" textColor="link">
-                {label}
-            </Link>
-        </NextLink>
+        <Link as={NextLink} href={url} fontWeight="bold" textColor="link" fontSize={fontSize}>
+            {label}
+        </Link>
     );
 };
 

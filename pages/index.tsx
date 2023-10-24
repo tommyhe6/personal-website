@@ -92,24 +92,24 @@ const Home: NextPage = () => {
                 </title>
                 <meta name="description" content="Hey, I'm Tommy! Welcome to my site : )" />
             </Head>
-            <VStack alignItems="start">
+            <VStack alignItems="start" width="100%">
                 <Box lineHeight="1.7em">
                     <Text>
-                        Hey, I&#39;m Tommy! Here&#39;s some facts about me
+                        Hey, I&#39;m Tommy!
                     </Text>
                     <UnorderedList marginLeft="10">
-                        <ListItem>Technical co-founder of <MyLink label="Lumy" url="https://lumy.co" /></ListItem>
-                        <ListItem>Previous a C++ dev at <MyLink label="Tower Research Capital" url="https://www.tower-research.com" /></ListItem>
-                        <ListItem>Interested in ML, systems programming, and cryptography</ListItem>
-                        <ListItem>Studied Math & CS at McGill</ListItem>
-                        <ListItem>Currently training for a marathon</ListItem>
-                        <ListItem>Believe variety is the spice of life; try something new!</ListItem>
-                        <ListItem>Enjoy games with chance</ListItem>
+                        <ListItem>Previously I worked on <MyLink label="Lumy" url="https://lumy.co" isExternal={true} />, building autonomous agents for personal use and financial analysis.</ListItem>
+                        <ListItem>I'm generally interested in ML, systems programming, and their theory. Currently I'm learning</ListItem>
+                        <UnorderedList marginLeft="10">
+                            <ListItem><MyLink label="Nix" url="https://nix.dev" isExternal={true} /></ListItem>
+                            <ListItem>Finance</ListItem>
+                            <ListItem><MyLink label="Category theory" url="https://math.jhu.edu/~eriehl/context/" isExternal={true} /></ListItem>
+                        </UnorderedList>
                     </UnorderedList>
                 </Box>
                 <Spacer />
                 <Text>
-                    And stay tuned for more writings! In case you&#39;re bored, try to make {G} from the following card numbers each exactly once using addition, subtraction, multiplication, or division with any parentheses.
+                    And stay tuned for more writings. In case you&#39;re bored, try to make {G} from the following card numbers using each exactly once with addition, subtraction, multiplication, or division and arbitrary parentheses.
                 </Text>
 
                 <HStack alignSelf="center" lineHeight="7em">

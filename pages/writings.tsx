@@ -1,5 +1,5 @@
 import PostItem from "components/PostItem";
-import { getAllPosts, MdxMeta } from "blogUtils";
+import { getAllPosts, MdxMeta } from "writingsUtils";
 
 import { VStack, List, ListItem } from "@chakra-ui/react";
 import Head from "next/head";
@@ -18,8 +18,8 @@ const Posts: NextPage<Props> = ({ posts }) => {
                 </title>
                 <meta name="description" content="My writings mostly on interesting topics I&#39;ve found in mathematics and computer science." />
             </Head>
-            <VStack>
-                <List spacing={5}>
+            <VStack alignItems="start" width="100%">
+                <List spacing={5} width="100%">
                     {posts
                         .sort((a, b) => (
                             new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()

@@ -1,4 +1,4 @@
-import { getAllPosts, getPost, MdxBody } from "blogUtils";
+import { getAllPosts, getPost, MdxBody } from "writingsUtils";
 
 import { getMDXComponent, type MDXContentProps } from "mdx-bundler/client";
 import { VStack, Heading, Text } from "@chakra-ui/react";
@@ -14,21 +14,24 @@ type Path = {
 const Post = ({ frontmatter, code }: MdxBody) => {
     const Component: React.FunctionComponent<MDXContentProps> = React.useMemo(() => getMDXComponent(code), [code]);
     return (
-        <VStack spacing={3} align="front">
+        <>
             <Head>
                 <title>
                     {frontmatter.title}
                 </title>
                 <meta name="description" content={frontmatter.description} />
             </Head>
-            <Heading as="h1">
-                {frontmatter.title}
-            </Heading>
-            <Text size="md" color="date">
-                {frontmatter.date}
-            </Text>
-            <Component />
-        </VStack>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossOrigin="anonymous" />
+            <VStack alignItems="start" width="100%">
+                <Heading as="h1">
+                    {frontmatter.title}
+                </Heading>
+                <Text size="md" color="date">
+                    {frontmatter.date}
+                </Text>
+                <Component />
+            </VStack>
+        </>
     );
 };
 

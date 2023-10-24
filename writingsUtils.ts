@@ -2,8 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { bundleMDX } from "mdx-bundler";
+import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import rehypeMathjax from "rehype-mathjax";
+import rehypeKatex from "rehype-katex";
 
 type Frontmatter = {
     [key: string]: string,
@@ -49,17 +50,8 @@ export const getPost = async (slug: string): Promise<MdxBody> => {
     const { code, frontmatter }: { code: string, frontmatter: Frontmatter } = await bundleMDX({
         source: String(source),
         mdxOptions(options) {
-            options.remarkPlugins = [...(options?.remarkPlugins ?? []), [remarkMath]];
-            options.rehypePlugins = [...(options?.rehypePlugins ?? []), [rehypeMathjax, {
-                tex: {
-                    inlineMath: [
-                        ["\\(", "\\)"]
-                    ],
-                    displayMath: [
-                        ["\\[", "\\]"]
-                    ],
-                }
-            }]];
+            options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkMath, remarkGfm];
+            options.rehypePlugins = [...(options?.rehypePlugins ?? []), rehypeKatex];
             return options;
         },
     });

@@ -1,0 +1,46 @@
+---
+title: Adversarial Examples
+date: October, 2023
+description: Introduction to adversarial examples
+---
+# WIP
+## Introduction To Adversarial Examples and Adversarial Training
+Let's start by looking in the case of attacks against supervised learning models in computer vision.
+
+Let's begin by reviewing the empirical risk minimization (ERM) framework for supervised learning. In ERM, we are given a dataset of $n$ samples $\mathcal{D} = \{(x_1, y_1), \dots, (x_n, y_n)\}$, where $x_i \in \mathbb{R}^d$ is a feature vector and $y_i \in \mathcal{Y}$ is a label. We assume that the samples are drawn i.i.d. from some distribution $D$ over $\mathcal{X} \times \mathcal{Y}$. We also assume that there exists some function $f^* : \mathcal{X} \rightarrow \mathcal{Y}$ that minimizes the expected loss $\mathbb{E}_{(x, y) \sim D}[\ell(f(x), y)]$ for some loss function $\ell : \mathcal{Y} \times \mathcal{Y} \rightarrow \mathbb{R}$. The goal of ERM is to find a function $f : \mathcal{X} \rightarrow \mathcal{Y}$ that minimizes the empirical loss $\frac{1}{n} \sum_{i=1}^n \ell(f(x_i), y_i)$.
+
+## Why Do We Care?
+
+Outside of the nice mathematical properties, do these gaps in the topology actually matter?
+
+## Hypotheses
+overfitting? cant be since it occurs in small models too
+topological holes?
+https://arxiv.org/pdf/1901.09496v1.pdf
+linearity hypothesis?
+
+## How to construct
+
+Adversarial attacks are algorithms that malicious attackers use to cause an misclassification in an ML model. Techniques involve data poisoning, evasion attacks, and model extraction attacks; however, we will focus on methods for constructing adversarial examples.
+
+## Transferability
+
+One of the most interesting facts about these adversarial examples is their generalizability[^1] of *transferability*. 
+
+Typically, in the formulations before, we find specific adversarial perturbations per sample point. 
+
+There are perturbations that work across multiple different models and images and generalize to new ones. 
+
+The existence of these *universal adversarial perturbations* [^2] gives surprising insight into the topology of neural networks.
+
+## Attacks on LLMS
+
+You may have seen the "jailbreaks" that bypass safety alignment in large language models (LLMs) such as _____TODO_____, and successfully reproduced them yourself. However, could you automatically find attacks that bypass alignment? In fact yes! you can and it displays similar findings to the traditional adversarial attacks.
+
+## Attacks on Humans
+
+If we can construct these adversarial examples for all neural nets, which are meant to approximate human intelligence, then that naturally brings up the question of whether humans have adversarial examples.
+
+
+[^1]: https://arxiv.org/abs/1412.6572
+[^2]: https://openaccess.thecvf.com/content_cvpr_2017/papers/Moosavi-Dezfooli_Universal_Adversarial_Perturbations_CVPR_2017_paper.pdf
