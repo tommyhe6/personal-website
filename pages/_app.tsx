@@ -1,19 +1,9 @@
 import Layout from "components/Layout";
-// import '@fontsource/vollkorn-sc';
-// import '@fontsource/inter';
-// import '@fontsource/fira-sans';
-// import '@fontsource/poppins';
-// import '@fontsource/proza-libre';
-// import '@fontsource/fira-sans-extra-condensed';
 import '@fontsource/atkinson-hyperlegible';
-// apercu
-import '@fontsource/oxygen';
 import { ChakraProvider, extendTheme, type ThemeConfig } from "@chakra-ui/react";
 import { ThemeProvider } from "next-themes"
 import Head from "next/head";
 import type { AppProps } from 'next/app';
-
-// const vollkorn = Vollkorn({ subsets: ["latin"] });
 
 const theme: ThemeConfig = extendTheme({
     useSystemColorMode: false,
@@ -32,21 +22,21 @@ const theme: ThemeConfig = extendTheme({
     styles: {
         global: {
             h1: {
-                fontSize: "6xl",
+                fontSize: "5xl",
                 fontWeight: "bold",
             },
             h2: {
-                fontSize: "4xl",
+                fontSize: "3xl",
                 fontWeight: "bold",
             },
             h3: {
-                fontSize: "3xl",
+                fontSize: "2xl",
                 fontWeight: "bold",
             },
             body: {
                 background: "white",
                 textColor: "black",
-                fontSize: "2xl",
+                fontSize: "xl",
                 fontWeight: "medium",
                 marginLeft: "calc(100vw - 100%)"
             }

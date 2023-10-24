@@ -99,7 +99,7 @@ const Home: NextPage = () => {
                     </Text>
                     <UnorderedList marginLeft="10">
                         <ListItem>Previously I worked on <MyLink label="Lumy" url="https://lumy.co" isExternal={true} />, building autonomous agents for personal use and financial analysis.</ListItem>
-                        <ListItem>I'm generally interested in ML, systems programming, and their theory. Currently I'm learning</ListItem>
+                        <ListItem>I&#39;m generally interested in ML, systems programming, and their theory. Currently I&#39;m learning</ListItem>
                         <UnorderedList marginLeft="10">
                             <ListItem><MyLink label="Nix" url="https://nix.dev" isExternal={true} /></ListItem>
                             <ListItem>Finance</ListItem>
