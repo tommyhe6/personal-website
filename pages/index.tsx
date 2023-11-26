@@ -9,12 +9,12 @@ import Head from "next/head";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
+    const N = 4, G = 24;
     const [cards, setCards] = useState<number[]>([]);
     const [sol, setSol] = useState<string>("solving...");
     const [solReveal, setSolReveal] = useState<boolean>(false);
     const [solExists, setSolExists] = useState<string>("solving...");
     const [solExistsReveal, setSolExistsReveal] = useState<boolean>(false);
-    const N = 4, G = 24;
 
     const solve: (cur: [number, string][], fin: boolean) => [string, boolean] = (cur, fin) => {
         if (cur.length == 1 && cur[0][0] == G) {
@@ -98,18 +98,18 @@ const Home: NextPage = () => {
                         Hey, I&#39;m Tommy!
                     </Text>
                     <UnorderedList marginLeft="10">
-                        <ListItem>Previously I worked on <MyLink label="Lumy" url="https://lumy.co" isExternal={true} />, building autonomous agents for personal use and financial analysis.</ListItem>
+                        <ListItem>Previously I worked on <MyLink label="Lumy" url="https://lumy.co" isExternal={true} />, building autonomous agents for personal use and financial analysis</ListItem>
                         <ListItem>I&#39;m generally interested in ML, systems programming, and their theory. Currently I&#39;m learning</ListItem>
                         <UnorderedList marginLeft="10">
                             <ListItem><MyLink label="Nix" url="https://nix.dev" isExternal={true} /></ListItem>
                             <ListItem>Finance</ListItem>
-                            <ListItem><MyLink label="Category theory" url="https://math.jhu.edu/~eriehl/context/" isExternal={true} /></ListItem>
+                            <ListItem><MyLink label="Compilers" url="https://craftinginterpreters.com/" isExternal={true} /></ListItem>
                         </UnorderedList>
                     </UnorderedList>
                 </Box>
                 <Spacer />
                 <Text>
-                    And stay tuned for more writings. In case you&#39;re bored, try to make {G} from the following card numbers using each exactly once with addition, subtraction, multiplication, or division and arbitrary parentheses.
+                    Stay tuned for more writings. In case you&#39;re bored, try to make {G} from the following card numbers using each exactly once with addition, subtraction, multiplication, or division and arbitrary parentheses.
                 </Text>
 
                 <HStack alignSelf="center" lineHeight="7em">
